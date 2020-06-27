@@ -1,21 +1,70 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect } from "react"
+import Header from "../components/header"
+import Overlay from "../components/overlay"
+import Banner from "../components/banner"
+import gsap from "gsap"
+import Menu from "../components/menu"
+import Contact from "../components/contact"
+import About from "../components/about"
+import styles from "../styles/main.module.scss"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const IndexPage = () => {
+  useEffect(() => {
+    gsap.to("body", 0, { css: { visibility: "visible" } })
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    const tl = gsap.timeline()
+
+    tl.from("#banner-text", {
+      duration: 1.5,
+      css: { letterSpacing: "2rem" },
+    })
+      .to("#overlay-slide", {
+        duration: 1.6,
+        height: 0,
+        ease: "expo.inOut",
+        stagger: {
+          amount: 0.1,
+        },
+      })
+      .from("#about-title", {
+        duration: 1.6,
+        y: 100,
+        ease: "power4.out",
+        delay: -1,
+        skewY: 2,
+        stagger: {
+          amount: 0.5,
+        },
+      })
+      .to("#header", {
+        duration: 0,
+        css: { visibility: "visible" },
+        delay: -0.3,
+      })
+      .to("#overlay-slide", {
+        duration: 0,
+        css: { display: "none" },
+      })
+      .to("html", {
+        duration: 0,
+        css: {
+          overflowY: "scroll",
+        },
+      })
+  }, [])
+
+  return (
+    <div id="index-main-container">
+      <Overlay />
+      <Menu />
+      <Header />
+      <div id="main-container">
+        <Banner />
+        <About />
+        <Contact />
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  )
+}
 
 export default IndexPage

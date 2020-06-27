@@ -1,0 +1,101 @@
+@import "./colors.scss";
+@import "./breakpoints.scss";
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+
+  .left {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+
+    .title {
+      font-size: 22px;
+      font-family: "JosefinSans";
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $black;
+    }
+
+    @include media(">=desktop") {
+      font-size: 22px;
+    }
+
+    @include media("<=desktop") {
+      font-size: 22px;
+    }
+
+    @include media("<=tablet") {
+      font-size: 20px;
+    }
+
+    @include media("<=largePhone") {
+      font-size: 20px;
+    }
+
+    @include media("<=smallPhone") {
+      font-size: 20px;
+    }
+  }
+
+  .right {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .burger {
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      @include media(">=desktop") {
+        margin-right: 120px;
+      }
+
+      @include media("<=desktop") {
+        margin-right: 100px;
+      }
+
+      @include media("<=tablet") {
+        margin-right: 70px;
+      }
+
+      @include media("<=largePhone") {
+        margin-right: 35px;
+      }
+
+      @include media("<=smallPhone") {
+        margin-right: 30px;
+      }
+
+      .sliceTop {
+        width: 85%;
+        height: 5px;
+        background-color: $black;
+        border-radius: 2px;
+        margin-bottom: 5px;
+      }
+
+      .sliceBottom {
+        width: 85%;
+        height: 5px;
+        background-color: $black;
+        border-radius: 2px;
+      }
+    }
+  }
+}

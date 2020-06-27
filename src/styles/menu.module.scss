@@ -1,0 +1,25 @@
+@import "./breakpoints.scss";
+@import "./colors.scss";
+
+.main {
+  position: absolute;
+  top: 81px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  z-index: -1;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  font-family: "PTSans-Regular";
+
+  h1 {
+    letter-spacing: 1px;
+    line-height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

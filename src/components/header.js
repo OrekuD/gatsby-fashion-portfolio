@@ -1,42 +1,32 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
+import HeaderStyles from "../styles/header.module.scss"
+import { openMenu, closeMenu } from "../animations/menuAnimations"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const [open, setOpen] = useState(true)
+  const func = () => {
+    if (open) {
+      openMenu()
+      setOpen(false)
+    } else {
+      closeMenu()
+      setOpen(true)
+    }
+  }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  return (
+    <header id="header">
+      <div className={HeaderStyles.left}>
+        <h3 className={HeaderStyles.title}> opoku </h3>
+      </div>
+      <div className={HeaderStyles.right}>
+        <div onClick={func} className={HeaderStyles.burger}>
+          <div id="slide-top" className={HeaderStyles.sliceTop} />
+          <div id="slide-bottom" className={HeaderStyles.sliceBottom} />
+        </div>
+      </div>
+    </header>
+  )
 }
 
 export default Header

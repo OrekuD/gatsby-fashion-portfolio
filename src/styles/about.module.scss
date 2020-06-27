@@ -1,0 +1,90 @@
+@import "./breakpoints.scss";
+@import "./colors.scss";
+
+.main {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-top: -160px;
+
+  @include media("<=desktop") {
+    margin-top: -160px;
+  }
+
+  @include media("<=tablet") {
+    margin-top: -140px;
+  }
+
+  @include media("<=largePhone") {
+    margin-top: -130px;
+  }
+
+  @include media("<=smallPhone") {
+    margin-top: -125px;
+  }
+
+  .title {
+    font-size: 130px;
+    letter-spacing: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 900;
+    line-height: 90px;
+    text-transform: uppercase;
+    margin-left: 10px;
+
+    //text-transform: uppercase;
+    @include media(">=desktop") {
+      font-size: 160px;
+      line-height: 120px;
+    }
+
+    @include media("<=desktop") {
+      font-size: 150px;
+      line-height: 110px;
+    }
+
+    @include media("<=tablet") {
+      font-size: 135px;
+      line-height: 100px;
+    }
+
+    @include media("<=largePhone") {
+      font-size: 90px;
+      line-height: 75px;
+    }
+
+    @include media("<=smallPhone") {
+      font-size: 100px;
+      line-height: 70px;
+    }
+  }
+
+  .content {
+    width: 80%;
+    margin: 70px 0 20px 10px;
+    padding: 10px 0;
+    line-height: 33px;
+    font-size: 24px;
+    //opacity: 0.6;
+    @include media(">=desktop") {
+      width: 60%;
+    }
+
+    @include media("<=desktop") {
+      width: 60%;
+    }
+
+    @include media("<=tablet") {
+      width: 70%;
+    }
+
+    @include media("<=largePhone") {
+      width: 80%;
+    }
+
+    @include media("<=smallPhone") {
+      width: 85%;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "./colors.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  visibility: hidden;
+  scroll-behavior: smooth;
+  // font-family: "JosefinSans";
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@font-face {
+  font-family: "PTSans-Regular";
+  src: url("../fonts/PTSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "JosefinSans";
+  src: url("../fonts/JosefinSans.ttf");
+}

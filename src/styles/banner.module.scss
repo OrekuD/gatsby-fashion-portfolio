@@ -1,0 +1,96 @@
+@import "./colors.scss";
+@import "./breakpoints.scss";
+
+.main {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  background: $white;
+  white-space: nowrap;
+  padding-bottom: 150px;
+
+  @include media("<=desktop") {
+    padding-bottom: 160px;
+  }
+
+  @include media("<=tablet") {
+    padding-bottom: 140px;
+  }
+
+  @include media("<=largePhone") {
+    padding-bottom: 130px;
+  }
+
+  @include media("<=smallPhone") {
+    padding-bottom: 125px;
+  }
+
+  .text {
+    font-family: "JosefinSans";
+    text-transform: uppercase;
+    mix-blend-mode: difference;
+    z-index: 10;
+    color: $white;
+    font-size: 30px;
+    letter-spacing: 10px;
+    text-align: center;
+
+    @include media(">=desktop") {
+      font-size: 40px;
+      letter-spacing: 0.5vw;
+    }
+
+    @include media("<=desktop") {
+      font-size: 40px;
+      letter-spacing: 0.5vw;
+    }
+
+    @include media("<=tablet") {
+      font-size: 35px;
+      letter-spacing: 0.5vw;
+    }
+
+    @include media("<=largePhone") {
+      font-size: 30px;
+      letter-spacing: 0.5vw;
+    }
+
+    @include media("<=smallPhone") {
+      font-size: 20px;
+      letter-spacing: 0.5vw;
+    }
+  }
+
+  .sub-text {
+    font-family: "JosefinSans";
+    color: $black;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.2vw;
+    margin-top: 20px;
+
+    @include media(">=desktop") {
+      font-size: 28px;
+    }
+
+    @include media("<=desktop") {
+      font-size: 26px;
+    }
+
+    @include media("<=tablet") {
+      font-size: 22px;
+    }
+
+    @include media("<=largePhone") {
+      font-size: 20px;
+    }
+
+    @include media("<=smallPhone") {
+      font-size: 20px;
+    }
+  }
+}
