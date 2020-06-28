@@ -6,7 +6,7 @@ import gsap from "gsap"
 import Menu from "../components/menu"
 import Contact from "../components/contact"
 import About from "../components/about"
-import styles from "../styles/main.module.scss"
+import Layout from "../components/layout"
 
 const IndexPage = () => {
   useEffect(() => {
@@ -54,16 +54,18 @@ const IndexPage = () => {
   }, [])
 
   return (
-    <div id="index-main-container">
-      <Overlay />
-      <Menu />
-      <Header />
-      <div id="main-container">
-        <Banner />
-        <About />
-        <Contact />
+    <Layout>
+      <div id="index-main-container">
+        <Overlay />
+        <Menu />
+        <Header />
+        <div id="main-container">
+          <Banner />
+          <About />
+          <Contact />
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

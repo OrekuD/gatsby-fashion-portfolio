@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import MenuStyles from "../styles/menu.module.scss"
 import { navigate } from "gatsby"
 import { closeMenu } from "../animations/menuAnimations"
+import { Context } from "../context/context"
 
 const Menu = () => {
+  const { setOpen, open } = useContext(Context)
+
   const goTo = destination => {
+    setOpen(!open)
     closeMenu()
     setTimeout(() => {
       navigate(destination)
