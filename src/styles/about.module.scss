@@ -59,32 +59,67 @@
       line-height: 70px;
     }
   }
+}
 
-  .content {
-    width: 80%;
-    margin: 70px 0 20px 10px;
-    padding: 10px 0;
-    line-height: 33px;
-    font-size: 24px;
-    //opacity: 0.6;
-    @include media(">=desktop") {
-      width: 60%;
-    }
+.container {
+  display: flex;
+  margin: 70px 0 20px 10px;
+  justify-content: space-between;
 
-    @include media("<=desktop") {
-      width: 60%;
-    }
+  @include media("<=tablet") {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.content {
+  width: 40% !important;
+  padding: 10px 0;
+  line-height: 33px;
+  font-size: 24px;
+
+  //opacity: 0.6;
+  @include media(">=desktop") {
+    width: 60%;
+  }
+
+  @include media("<=desktop") {
+    width: 50%;
+  }
+
+  @include media("<=tablet") {
+    width: 90% !important;
+    text-align: center;
+  }
+}
+
+.image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  @include media("<=tablet") {
+    width: 100%;
+  }
+
+  img {
+    height: 50%;
+    margin-top: 60px;
+    margin-bottom: 20px;
 
     @include media("<=tablet") {
-      width: 70%;
+      width: 60% !important;
     }
+  }
 
-    @include media("<=largePhone") {
-      width: 80%;
-    }
-
-    @include media("<=smallPhone") {
-      width: 85%;
-    }
+  .overlay {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
   }
 }

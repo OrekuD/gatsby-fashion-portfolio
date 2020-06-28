@@ -1,12 +1,18 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import AboutStyles from "../styles/about.module.scss"
 import { useInView } from "react-intersection-observer"
 import { about } from "../data/about"
 import gsap from "gsap"
+import Image from "../images/6.jpg"
 
 const About = () => {
   const [aboutRef, inView] = useInView({
     triggerOnce: false,
+    rootMargin: "-40px",
+  })
+
+  const [imageRef, imageInView] = useInView({
+    triggerOnce: true,
     rootMargin: "-40px",
   })
 
@@ -18,10 +24,28 @@ const About = () => {
     }
   }, [inView])
 
-  const tl = gsap.timeline()
+  useEffect(() => {
+    if (imageInView) {
+      imageTransition()
+    }
+  }, [imageInView])
+
+  const imageTransition = () => {
+    const tl = gsap.timeline()
+
+    tl.to("#image-overlay", {
+      duration: 1.3,
+      delay: 0.2,
+      translateX: "100%",
+    }).from("#image-hero", {
+      duration: 1.3,
+      delay: -1.5,
+      scale: 1.4,
+    })
+  }
 
   const fadeIn = () => {
-    tl.to("#about-content", {
+    gsap.to("#about-content", {
       duration: 1,
       ease: "power4.out",
       y: -70,
@@ -29,7 +53,7 @@ const About = () => {
   }
 
   const fadeOut = () => {
-    tl.to("#about-content", {
+    gsap.to("#about-content", {
       duration: 0.5,
       y: 0,
       //opacity: 0.6,
@@ -46,9 +70,13 @@ const About = () => {
       <span id="about-title" className={AboutStyles.title}>
         me
       </span>
-      <p ref={aboutRef} id="about-content" className={AboutStyles.content}>
-        {about}
-      </p>
+      <div ref={aboutRef} id="about-content" className={AboutStyles.container}>
+        <p className={AboutStyles.content}>{about}</p>
+        <div ref={imageRef} className={AboutStyles.image}>
+          <img id="image-hero" src={Image} alt="Thumbnail" />
+          <div id="image-overlay" className={AboutStyles.overlay} />
+        </div>
+      </div>
     </div>
   )
 }
