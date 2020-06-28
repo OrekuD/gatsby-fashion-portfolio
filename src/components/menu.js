@@ -17,10 +17,10 @@ const Menu = () => {
 
   return (
     <div id="menu-container" className={MenuStyles.main}>
-      <h1 onClick={() => goTo("/")}> Home </h1>
-      <h1 onClick={() => goTo("#about-container")}> About me </h1>
-      <h1 onClick={() => goTo("/showcase")}> Showcase </h1>
-      <h1 onClick={() => goTo("/contact")}> Contact </h1>
+      <p onClick={() => goTo("/")}> Home </p>
+      <p onClick={() => goTo("#about-container")}> About me </p>
+      <p onClick={() => goTo("/showcase")}> Showcase </p>
+      <p onClick={() => goTo("/contact")}> Contact </p>
     </div>
   )
 }

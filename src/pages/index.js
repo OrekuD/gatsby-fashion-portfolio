@@ -1,9 +1,7 @@
 import React, { useEffect } from "react"
-import Header from "../components/header"
 import Overlay from "../components/overlay"
 import Banner from "../components/banner"
 import gsap from "gsap"
-import Menu from "../components/menu"
 import Contact from "../components/contact"
 import About from "../components/about"
 import Layout from "../components/layout"
@@ -57,13 +55,8 @@ const IndexPage = () => {
     <Layout>
       <div id="index-main-container">
         <Overlay />
-        <Menu />
-        <Header />
-        <div id="main-container">
-          <Banner />
-          <About />
-          <Contact />
-        </div>
+        <Banner />
+        <About />
       </div>
     </Layout>
   )

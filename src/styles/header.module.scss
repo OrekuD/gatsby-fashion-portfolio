@@ -9,28 +9,30 @@ header {
   height: 80px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
 
-  .left {
-    height: 100%;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 30px;
+  @include media(">=desktop") {
+    padding: 0 100px;
+  }
 
-    .title {
-      font-size: 22px;
-      font-family: "JosefinSans";
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: $black;
-    }
+  @include media("<=tablet") {
+    padding: 0 30px;
+  }
+
+  @include media("<=largePhone") {
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 22px;
+    font-family: "JosefinSans";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $black;
 
     @include media(">=desktop") {
-      font-size: 22px;
-    }
-
-    @include media("<=desktop") {
       font-size: 22px;
     }
 
@@ -39,63 +41,32 @@ header {
     }
 
     @include media("<=largePhone") {
-      font-size: 20px;
-    }
-
-    @include media("<=smallPhone") {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 
-  .right {
-    height: 100%;
-    width: 70%;
+  .burger {
+    width: 30px;
+    height: 25px;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
+    cursor: pointer;
+    margin-top: 8px;
 
-    .burger {
-      width: 30px;
-      height: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
+    .sliceTop {
+      width: 85%;
+      height: 5px;
+      background-color: $black;
+      border-radius: 2px;
+      margin-bottom: 5px;
+    }
 
-      @include media(">=desktop") {
-        margin-right: 120px;
-      }
-
-      @include media("<=desktop") {
-        margin-right: 100px;
-      }
-
-      @include media("<=tablet") {
-        margin-right: 70px;
-      }
-
-      @include media("<=largePhone") {
-        margin-right: 35px;
-      }
-
-      @include media("<=smallPhone") {
-        margin-right: 30px;
-      }
-
-      .sliceTop {
-        width: 85%;
-        height: 5px;
-        background-color: $black;
-        border-radius: 2px;
-        margin-bottom: 5px;
-      }
-
-      .sliceBottom {
-        width: 85%;
-        height: 5px;
-        background-color: $black;
-        border-radius: 2px;
-      }
+    .sliceBottom {
+      width: 85%;
+      height: 5px;
+      background-color: $black;
+      border-radius: 2px;
     }
   }
 }

@@ -18,14 +18,10 @@ const Header = () => {
 
   return (
     <header id="header">
-      <div className={HeaderStyles.left}>
-        <h3 className={HeaderStyles.title}> doryameo </h3>
-      </div>
-      <div className={HeaderStyles.right}>
-        <div onClick={func} className={HeaderStyles.burger}>
-          <div id="slide-top" className={HeaderStyles.sliceTop} />
-          <div id="slide-bottom" className={HeaderStyles.sliceBottom} />
-        </div>
+      <h3 className={HeaderStyles.title}> doryameo </h3>
+      <div onClick={func} className={HeaderStyles.burger}>
+        <div id="slide-top" className={HeaderStyles.sliceTop} />
+        <div id="slide-bottom" className={HeaderStyles.sliceBottom} />
       </div>
     </header>
   )
