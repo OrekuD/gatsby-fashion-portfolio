@@ -6,15 +6,19 @@ import { images } from "../data/images"
 
 const Showcase = () => {
   return (
-    <div className={styles.main}>
-      <AwesomeSlider fillParent>
-        {images.map(({ image }, index) => (
-          <div key={index}>
-            <img src={image} className={styles.img} />
-          </div>
-        ))}
-      </AwesomeSlider>
-    </div>
+    <AwesomeSlider
+      fillParent
+      bullets={false}
+      infinite
+      mobileTouch
+      className={styles.main}
+    >
+      {images.map(({ image }, index) => (
+        <div key={index}>
+          <img src={image} className={styles.img} alt="Preview" />
+        </div>
+      ))}
+    </AwesomeSlider>
   )
 }
 

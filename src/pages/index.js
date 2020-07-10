@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import Overlay from "../components/overlay"
 import Banner from "../components/banner"
 import gsap from "gsap"
-import Contact from "../components/contact"
 import About from "../components/about"
 import Layout from "../components/layout"
 

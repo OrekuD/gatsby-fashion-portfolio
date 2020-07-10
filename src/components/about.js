@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 import AboutStyles from "../styles/about.module.scss"
 import { useInView } from "react-intersection-observer"
 import { about } from "../data/about"

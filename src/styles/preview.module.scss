@@ -1,0 +1,23 @@
+.main {
+  height: 100vh;
+  background-color: red;
+  display: grid;
+  grid-template-columns: repeat(8, 100%);
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cyan;
+  scroll-snap-align: start;
+}
+
+.image {
+  max-width: 80%;
+  max-height: 80%;
+}
